@@ -1,12 +1,12 @@
 package main
 
 import (
-  "diplom/src"
+	"diplom/src"
 )
 
 func main() {
-  src.CheckFieldK(11)
-  //fmt.Println(src.CheckParams(-1, -1, 1, 0, 0, 1, 0))
+	src.CheckFieldK(13)
+	//fmt.Println(src.CheckParams(-1, -1, 1, 0, 0, 1, 0))
 }
 
 // 2 - 13
