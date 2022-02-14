@@ -25,7 +25,7 @@ func (c *MatrixCache) PutRank(rep string, r int) {
 }
 
 func (c *MatrixCache) Stats() string {
-	return fmt.Sprintf("---Cache stats---\nRank hits: %d\nRank misses: %d\n-----------------", c.RankHits, c.RankMisses)
+	return fmt.Sprintf("---Cache stats---\nRank hits: %d\nRank misses: %d\n-----------------\n", c.RankHits, c.RankMisses)
 }
 
 func NewMatrixCache() *MatrixCache {

@@ -11,7 +11,7 @@ func IsZ(x float64) bool {
 
 func display(x *mat.Dense) {
 	s := mat.Formatted(x)
-	fmt.Printf("%v\n\n", s)
+	Out.Log(fmt.Sprintf("%v\n\n", s))
 }
 
 func ModK(x float64, k int) float64 {
