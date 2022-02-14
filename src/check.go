@@ -2,6 +2,7 @@ package src
 
 import (
 	"fmt"
+
 	"gonum.org/v1/gonum/mat"
 )
 

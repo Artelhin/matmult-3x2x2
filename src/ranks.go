@@ -1,8 +1,9 @@
 package src
 
 import (
-	"gonum.org/v1/gonum/mat"
 	"strconv"
+
+	"gonum.org/v1/gonum/mat"
 )
 
 func Matrix3NumberWithEachRank(m [][]mat.Matrix) map[string]int {
@@ -73,7 +74,7 @@ func RankFieldK(matrix mat.Matrix, k int) int {
 					// mult := x.At(col, row) / x.At(row, row)
 					mult := InvFieldK(x.At(row, row), k) * x.At(col, row)
 					for i := 0; i < rank; i++ {
-						x.Set(col, i, ModK(x.At(col, i) - mult * x.At(row, i), k))
+						x.Set(col, i, ModK(x.At(col, i)-mult*x.At(row, i), k))
 					}
 				}
 			}
@@ -117,7 +118,7 @@ func Rank(matrix mat.Matrix) int {
 				if col != row {
 					mult := x.At(col, row) / x.At(row, row)
 					for i := 0; i < rank; i++ {
-						x.Set(col, i, x.At(col, i) - mult * x.At(row, i))
+						x.Set(col, i, x.At(col, i)-mult*x.At(row, i))
 					}
 				}
 			}
