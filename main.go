@@ -12,7 +12,7 @@ func main() {
 	var (
 		kFlag   = flag.Int("k", 2, "size of the field (simple number)")
 		outFlag = flag.String("o", "", "name of the output file")
-		outLog  = flag.String("name ol", "", "file to output each different solution")
+		outLog  = flag.String("ol", "", "file to output each different solution")
 	)
 
 	flag.Parse()
