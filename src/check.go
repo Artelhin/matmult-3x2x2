@@ -43,8 +43,8 @@ func CheckFieldK(k int) {
 			}
 		}
 	}
-	Out.Log(fmt.Sprintf("%d different params found, %d processed\n", c, all))
 	Out.Log(cache.Stats())
+	Out.Report(fmt.Sprintf("%d non-equivalent solutions found, %d processed\n", c, all))
 	Out.Report(fmt.Sprintf("field MOD %d rank families (%d found):\n", k, len(family)))
 	for k, v := range family {
 		Out.Report(fmt.Sprintln(k, Decode(k), "-", v))
