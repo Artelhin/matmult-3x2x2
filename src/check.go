@@ -2,6 +2,7 @@ package src
 
 import (
 	"fmt"
+
 	"gonum.org/v1/gonum/mat"
 )
 
@@ -24,8 +25,8 @@ func CheckFieldK(k int) {
 								}
 								if !t {
 									h := hash(ranks)
-									fmt.Printf("%s %2d %2d %2d %2d %2d %2d %2d give %v\n",
-										h, m, n, p, q, x, y, u, ranks)
+									Out.Log(fmt.Sprintf("%s %2d %2d %2d %2d %2d %2d %2d give %v\n",
+										h, m, n, p, q, x, y, u, ranks))
 									c++
 									if v, ok := family[h]; ok {
 										family[h] = v + 1
@@ -33,7 +34,7 @@ func CheckFieldK(k int) {
 										family[h] = 1
 									}
 								} else {
-									//fmt.Println(m, n, p, q, x, y, u, "give same ranks")
+									//Out.Log(fmt.Sprintln(m, n, p, q, x, y, u, "give same ranks"))
 								}
 							}
 						}
@@ -42,11 +43,11 @@ func CheckFieldK(k int) {
 			}
 		}
 	}
-	fmt.Printf("%d different params found, %d processed\n", c, all)
-	fmt.Println(cache.Stats())
-	fmt.Printf("field MOD %d rank families (%d found):\n", k, len(family))
+	Out.Log(cache.Stats())
+	Out.Report(fmt.Sprintf("%d non-equivalent solutions found, %d processed\n", c, all))
+	Out.Report(fmt.Sprintf("field MOD %d rank families (%d found):\n", k, len(family)))
 	for k, v := range family {
-		fmt.Println(k, Decode(k), "-", v)
+		Out.Report(fmt.Sprintln(k, Decode(k), "-", v))
 	}
 }
 

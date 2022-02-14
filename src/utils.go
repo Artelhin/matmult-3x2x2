@@ -2,6 +2,7 @@ package src
 
 import (
 	"fmt"
+
 	"gonum.org/v1/gonum/mat"
 )
 
@@ -11,7 +12,7 @@ func IsZ(x float64) bool {
 
 func display(x *mat.Dense) {
 	s := mat.Formatted(x)
-	fmt.Printf("%v\n\n", s)
+	Out.Log(fmt.Sprintf("%v\n\n", s))
 }
 
 func ModK(x float64, k int) float64 {
@@ -32,12 +33,12 @@ func BinPow(x float64, k int) float64 {
 	case 1:
 		return x
 	case 2:
-		return x*x
+		return x * x
 	default:
-		if k % 2 == 1 {
-			return BinPow(x, k - 1) * x
+		if k%2 == 1 {
+			return BinPow(x, k-1) * x
 		} else {
-			b := BinPow(x, k / 2)
+			b := BinPow(x, k/2)
 			return b * b
 		}
 	}

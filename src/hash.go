@@ -1,9 +1,10 @@
 package src
 
 import (
-	"gonum.org/v1/gonum/mat"
 	"strconv"
 	"strings"
+
+	"gonum.org/v1/gonum/mat"
 )
 
 func hash(m map[string]int) string {
@@ -83,7 +84,7 @@ func matrixStrRepDecode(s string) *mat.Dense {
 	ss := strings.Split(s, ".")
 	r, _ := strconv.ParseInt(ss[0], 10, 64)
 	c, _ := strconv.ParseInt(ss[1], 10, 64)
-	data := make([]float64, 0, len(ss) - 2)
+	data := make([]float64, 0, len(ss)-2)
 	for _, v := range ss[2:] {
 		n, _ := strconv.ParseFloat(v, 64)
 		data = append(data, n)
