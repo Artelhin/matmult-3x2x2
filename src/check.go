@@ -18,8 +18,8 @@ func CheckFieldK(k int) {
 						for y := -k + 1; y < k; y++ {
 							for u := -k + 1; u < k; u++ {
 								all++
-								if all%10000 == 0 {
-									fmt.Println(all, "param sets processed")
+								if all%10000000 == 0 {
+									fmt.Printf("%d 000 000 param sets processed\n", all/1000000)
 								}
 								t, ranks, err := CheckParamsFieldK(k, m, n, p, q, x, y, u)
 								if err != nil {
