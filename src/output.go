@@ -2,6 +2,7 @@ package src
 
 import (
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -27,6 +28,10 @@ func (o *Outputer) Log(s string) {
 	if _, err := o.log.WriteString(s); err != nil {
 		fmt.Printf("error: can't write to log file: %s", err)
 	}
+}
+
+func (o *Outputer) Info(s string) {
+	log.Println(s)
 }
 
 //logFile can be passed as nil
