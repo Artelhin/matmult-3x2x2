@@ -18,8 +18,8 @@ func main() {
 	flag.Parse()
 
 	var (
-		out, log *os.File
-		err      error
+		out, ll *os.File
+		err     error
 	)
 
 	if *outFlag != "" {
@@ -29,13 +29,13 @@ func main() {
 		}
 	}
 	if *outLog != "" {
-		out, err = os.Create(*outLog)
+		ll, err = os.Create(*outLog)
 		if err != nil {
 			fmt.Printf("can't create log file: %s\nwon't return any logs", err)
 		}
 	}
 
-	src.SetOutput(out, log)
+	src.SetOutput(out, ll)
 
 	src.CheckFieldK(*kFlag)
 	//fmt.Println(src.CheckParams(-1, -1, 1, 0, 0, 1, 0))
